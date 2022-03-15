@@ -2,12 +2,12 @@
 
 use futures::{stream::Stream, task::Context};
 use futures_timer::Delay;
-use std::{
-    future::Future,
-    pin::Pin,
-    task::Poll,
-    time::{Duration, Instant},
-};
+use std::{future::Future, pin::Pin, task::Poll, time::Duration};
+
+#[cfg(target_family = "wasm")]
+use instant::Instant;
+#[cfg(not(target_family = "wasm"))]
+use std::time::Instant;
 
 /// Yields the current time in regular intervals.
 ///
