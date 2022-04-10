@@ -21,6 +21,9 @@ version = "stable"
 futures-timer = "3.0.2"
 futures = "0.3.5"
 
+[target.'cfg(target_family = "wasm")'.dependencies]
+instant = "0.1.12"
+
 [dev-dependencies]
 proptest = "1.0.0"
 smol = "1.2.5"
