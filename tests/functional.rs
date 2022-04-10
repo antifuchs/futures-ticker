@@ -9,7 +9,7 @@ const FIB_TIME: Duration = Duration::from_micros(10); // about this much "play".
 fn does_wait() {
     let start = Instant::now();
     let mut ticker = Ticker::new(INTERVAL);
-    smol::run(async {
+    smol::block_on(async {
         for i in 0..3 {
             let start = start + i * INTERVAL;
             if let Some(next) = ticker.next().await {
