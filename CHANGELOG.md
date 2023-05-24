@@ -4,6 +4,8 @@
 
 ## [Unreleased] - ReleaseDate
 
+## [[0.0.3](https://docs.rs/futures-ticker/0.0.3/futures-ticker/)] - 2023-05-24
+
 ### Added
 * The `Ticker` struct now derives `Debug` ([PR](https://github.com/antifuchs/futures-ticker/pull/11) by [@ozkanonur][ozkanonur])
 
