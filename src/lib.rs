@@ -15,6 +15,7 @@ use std::time::Instant;
 /// the "current" time in regular intervals (a "tick"). In case any
 /// ticks were missed, they will be skipped, and only the nearest
 /// upcoming tick is delivered.
+#[derive(Debug)]
 pub struct Ticker {
     interval: Duration,
     next: Instant,
