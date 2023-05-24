@@ -15,6 +15,7 @@ use std::time::Instant;
 /// the "current" time in regular intervals (a "tick"). In case any
 /// ticks were missed, they will be skipped, and only the nearest
 /// upcoming tick is delivered.
+#[derive(Debug)]
 pub struct Ticker {
     interval: Duration,
     next: Instant,
@@ -80,13 +81,13 @@ impl Stream for Ticker {
 
             Poll::Ready(_) => {
                 let now = Instant::now();
-                let next = self.next_tick();
+                let next = self.next_tick_from(now);
                 self.next = next;
                 self.schedule.reset(
                     next.checked_duration_since(now)
                         .unwrap_or_else(|| Duration::from_nanos(0)),
                 );
-                Poll::Ready(Some(Instant::now()))
+                Poll::Ready(Some(now))
             }
         }
     }
