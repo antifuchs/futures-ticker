@@ -26,4 +26,4 @@ instant = "0.1.12"
 
 [dev-dependencies]
 proptest = "1.0.0"
-smol = "1.2.5"
+smol = "2.0.2"
