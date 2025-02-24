@@ -54,7 +54,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3.5.3
     - name: "cargo deny"
-      uses: EmbarkStudios/cargo-deny-action@v1
+      uses: EmbarkStudios/cargo-deny-action@v2
       with:
         command: "check all"
 
